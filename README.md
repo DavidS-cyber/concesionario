@@ -4,7 +4,7 @@ Aplicación web desarrollada con Spring Boot, JPA/Hibernate, Thymeleaf y MySQL
 para gestionar vehículos y clientes de un concesionario.
 
 ## URL en producción
-https://TU-URL.up.railway.app
+https://concesionario-production-ae6e.up.railway.app
 
 ## Requisitos previos
 - Java 17
@@ -15,7 +15,7 @@ https://TU-URL.up.railway.app
 ## Pasos para ejecutarlo localmente
 
 1. Clonar el repositorio:
-   git clone https://github.com/tu-usuario/concesionario.git
+   git clone https://github.com/DavidS-cyber(Usuario)/concesionario.git
 
 2. Ejecutar el script SQL:
    mysql -u root -p < schema.sql
@@ -27,8 +27,22 @@ https://TU-URL.up.railway.app
 
 5. Abrir en el navegador: http://localhost:8080/inicio
 
-## Capturas de pantalla
-[Añadir capturas aquí]
+##  Capturas de pantalla
+
+### Página de inicio
+![Inicio](capturas/inicio.png)
+
+### Listado de Vehículos
+![Vehículos](capturas/listadoVehiculos.png)
+
+### Listado de Clientes
+![Clientes](capturas/listadoClientes.png)
+
+### Alta de Vehículo
+![Alta Vehículo](capturas/altaVehiculo.png)
+
+### Alta de Cliente
+![Alta Cliente](capturas/altaCliente.png)
 
 ## Endpoints disponibles
 - GET /inicio          → Página principal
