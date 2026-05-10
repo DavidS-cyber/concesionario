@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Alta Cliente</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #1a1a1a, #3d3d3d);
+            min-height: 100vh;
+            font-family: 'Segoe UI', sans-serif;
+            color: #fff;
+        }
+        .form-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: 60px;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h2 {
+            font-style: italic;
+            background: linear-gradient(90deg, #fff, #aaa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 25px;
+        }
+        .form-control {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            color: #fff;
+            border-radius: 10px;
+        }
+        .form-control:focus {
+            background: rgba(255,255,255,0.12);
+            border-color: #a0e0a0;
+            color: #fff;
+            box-shadow: 0 0 0 3px rgba(160,224,160,0.2);
+        }
+        .form-label { color: #ccc; }
+        .btn-guardar {
+            background: linear-gradient(90deg, #4caf50, #a0e0a0);
+            color: #222;
+            border: none;
+            border-radius: 50px;
+            padding: 12px;
+            width: 100%;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .btn-guardar:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(160,224,160,0.4);
+        }
+        .btn-volver {
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 50px;
+            padding: 8px 20px;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+        .btn-volver:hover { background: rgba(255,255,255,0.2); color: #fff; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="form-card">
+        <a href="/inicio" class="btn-volver"><- Volver</a>
+        <h2> Alta de Cliente</h2>
+        <form th:action="@{/altaCliente}" th:object="${cliente}" method="post">
+            <div class="mb-3">
+                <label class="form-label">Nombre</label>
+                <input type="text" th:field="*{nombre}" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Apellidos</label>
+                <input type="text" th:field="*{apellidos}" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" th:field="*{email}" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Teléfono</label>
+                <input type="text" th:field="*{telefono}" class="form-control">
+            </div>
+            <div class="mb-4">
+                <label class="form-label">Ciudad</label>
+                <input type="text" th:field="*{ciudad}" class="form-control">
+            </div>
+            <button type="submit" class="btn-guardar">Guardar Cliente</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

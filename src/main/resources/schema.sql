@@ -1,0 +1,20 @@
+CREATE DATABASE IF NOT EXISTS concesionario;
+USE concesionario;
+
+CREATE TABLE IF NOT EXISTS vehiculo (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    marca VARCHAR(100) NOT NULL,
+    modelo VARCHAR(100) NOT NULL,
+    anio INT NOT NULL,
+    precio DECIMAL(10,2) NOT NULL,
+    color VARCHAR(50)
+);
+
+CREATE TABLE IF NOT EXISTS cliente (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    apellidos VARCHAR(150) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    telefono VARCHAR(20),
+    ciudad VARCHAR(100)
+);
